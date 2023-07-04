@@ -179,7 +179,7 @@ export class MyApp extends connect(store)(LitElement) {
           slot="navigationIcon"
           class="menu-btn"
           title="Menu"
-          @click="${this._menuButtonClicked}"
+          @click="${() => store.dispatch(updateDrawerState(true))}"
         >
           ${menuIcon}
         </button>
@@ -197,8 +197,8 @@ export class MyApp extends connect(store)(LitElement) {
       <mwc-drawer
         type="modal"
         .open="${this._drawerOpened}"
-        @MDCDrawer:opened="${this._menuButtonClicked}"
-        @MDCDrawer:closed="${this._menuButtonClicked}"
+        @MDCDrawer:opened="${() => store.dispatch(updateDrawerState(true))}"
+        @MDCDrawer:closed="${() => store.dispatch(updateDrawerState(false))}"
       >
         <nav class="drawer-list">
           <a ?selected="${this._page === 'view1'}" href="/view1">View One</a>
@@ -250,11 +250,6 @@ export class MyApp extends connect(store)(LitElement) {
         image: 'images/manifest/icon-144x144.png',
       });
     }
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  _menuButtonClicked() {
-    store.dispatch(updateDrawerState(true));
   }
 
   // eslint-disable-next-line class-methods-use-this
