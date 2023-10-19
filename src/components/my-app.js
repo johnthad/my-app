@@ -187,9 +187,21 @@ export class MyApp extends connect(store)(LitElement) {
 
         <!-- This gets hidden on a small screen-->
         <nav class="toolbar-list">
-          <a ?selected="${this._page === 'view1'}" href="/view1">View One</a>
-          <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
-          <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
+          <a
+            ?selected="${this._page === 'view1'}"
+            href="${document.baseURI}view1"
+            >View One</a
+          >
+          <a
+            ?selected="${this._page === 'view2'}"
+            href="${document.baseURI}view2"
+            >View Two</a
+          >
+          <a
+            ?selected="${this._page === 'view3'}"
+            href="${document.baseURI}view3"
+            >View Three</a
+          >
         </nav>
       </mwc-top-app-bar>
 
@@ -201,9 +213,21 @@ export class MyApp extends connect(store)(LitElement) {
         @MDCDrawer:closed="${() => store.dispatch(updateDrawerState(false))}"
       >
         <nav class="drawer-list">
-          <a ?selected="${this._page === 'view1'}" href="/view1">View One</a>
-          <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
-          <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
+          <a
+            ?selected="${this._page === 'view1'}"
+            href="${document.baseURI}view1"
+            >View One</a
+          >
+          <a
+            ?selected="${this._page === 'view2'}"
+            href="${document.baseURI}view2"
+            >View Two</a
+          >
+          <a
+            ?selected="${this._page === 'view3'}"
+            href="${document.baseURI}view3"
+            >View Three</a
+          >
         </nav>
       </mwc-drawer>
 
