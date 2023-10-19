@@ -88,8 +88,3 @@ export const updateDrawerState = opened => ({
   type: UPDATE_DRAWER_STATE,
   opened,
 });
-
-export const updateDrawer = opened => ({
-  type: UPDATE_DRAWER_STATE,
-  opened,
-});
