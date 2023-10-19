@@ -1,6 +1,7 @@
 import merge from 'deepmerge';
 import html from '@web/rollup-plugin-html';
 import copy from 'rollup-plugin-copy';
+import replace from '@rollup/plugin-replace';
 import { createBasicConfig } from '@open-wc/building-rollup';
 
 const baseConfig = createBasicConfig();
@@ -41,6 +42,10 @@ export default merge(baseConfig, {
       ],
       // set flatten to false to preserve folder structure
       flatten: false,
+    }),
+    replace({
+      preventAssignment: true,
+      __buildEnv__: 'production',
     }),
   ],
 });
