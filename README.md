@@ -37,4 +37,4 @@ I have ideas where this project could go to be of use to others.
 
 - Use common Lit decorators like `@customElement`, `@property`, etc.
 
-- Write a version of this app using TypeScript. Gee, aren't all the cook kids using it?
+- Write a version of this app using TypeScript. Gee, aren't all the cool kids using it?
